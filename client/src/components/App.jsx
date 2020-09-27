@@ -5,7 +5,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        This is the app! And I'm on the right branch!
+        This is the app! This is a React App
       </div>
     )
   }
