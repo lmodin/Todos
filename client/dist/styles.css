@@ -1,4 +1,23 @@
 body {
-  color: white;
-  background-color: black;
+  max-width: 1100px;
+  text-align: center;
+  margin: 0 auto;
+  color: black;
+  font-family: Helvetica, sans-serif;
+}
+
+.header {
+  padding-top: 30px;
+  color: green;
+  font-size: 24px;
+}
+
+.addToDo {
+  color: blue;
+  padding: 15px;
+}
+
+.list {
+  color: red;
+  list-style: none;
 }

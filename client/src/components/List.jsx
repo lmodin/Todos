@@ -3,7 +3,13 @@ import React from 'react';
 const List = (props) => {
 
   return (
-    <div>This is the to do list!</div>
+    <ul className="list" >
+      {props.items.map((item) => (
+        <li>
+          {item}
+        </li>
+      ))}
+    </ul>
   )
 }
 
