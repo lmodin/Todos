@@ -10,6 +10,7 @@ class App extends React.Component {
       toDos: []
     }
     this.addNewToDo = this.addNewToDo.bind(this);
+    this.removeToDo = this.removeToDo.bind(this);
     console.log('Current todos: ', this.state.toDos)
   }
 
@@ -24,12 +25,21 @@ class App extends React.Component {
     console.log('Current todos: ', this.state.toDos)
   }
 
+  removeToDo(todo) {
+    let todos = this.state.toDos.slice();
+    let index = todos.indexOf(todo);
+    todos.splice(index, 1);
+    this.setState({
+      toDos: todos
+    })
+  }
+
   render() {
     return (
       <div>
         <Header />
         <AddToDo addNewToDo={this.addNewToDo} />
-        <List items={this.state.toDos} />
+        <List items={this.state.toDos} removeToDo={this.removeToDo} />
       </div>
     )
   }
