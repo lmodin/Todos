@@ -22,7 +22,7 @@ class App extends React.Component {
         toDos: [...this.state.toDos, todo]
       })
     }
-    console.log('Current todos: ', this.state.toDos)
+    //console.log('Current todos: ', this.state.toDos)
   }
 
   removeToDo(todo) {

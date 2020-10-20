@@ -3,7 +3,7 @@ import React from 'react';
 const Header = (props) => {
 
   return (
-    <div className="header" >This is the header!</div>
+    <div className="header" >Your list of things to do</div>
   )
 }
 

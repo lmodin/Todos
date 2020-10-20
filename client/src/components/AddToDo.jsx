@@ -1,25 +1,39 @@
 import React from 'react';
 
-const AddToDo = (props) => {
-  console.log(typeof props.addNewToDo)
-  var newItem = ""
-
-  const handleChange = (e) => {
-    newItem = e.target.value;
-    e.preventDefault();
+class AddToDo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      todo: ''
+    }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  const handleSubmit = (e) => {
+  handleChange (e) {
     e.preventDefault();
-    props.addNewToDo(newItem);
+    this.setState({
+      todo: e.target.value
+    })
   }
 
-  return (
-    <form className="addToDo" onSubmit={handleSubmit}>
-      <input type="text" name="todo" default="Type a new To Do here" onChange={handleChange}></input>
-      <input type="submit"></input>
-    </form>
-  )
+  handleSubmit (e) {
+    e.preventDefault();
+    this.props.addNewToDo(this.state.todo);
+    document.querySelectorAll('input');
+    this.setState({
+      todo: ''
+    })
+  }
+
+  render() {
+    return (
+      <form className="addToDo" onSubmit={this.handleSubmit}>
+        <input type="text" name="todo" default="Type a new To Do here" onChange={this.handleChange}></input>
+        <input type="submit"></input>
+      </form>
+    )
+  }
 }
 
 export default AddToDo
