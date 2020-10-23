@@ -20,10 +20,6 @@ class AddToDo extends React.Component {
   handleSubmit (e) {
     e.preventDefault();
     this.props.addNewToDo(this.state.todo);
-    document.querySelectorAll('input');
-    this.setState({
-      todo: ''
-    })
   }
 
   render() {

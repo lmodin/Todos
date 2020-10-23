@@ -20,8 +20,8 @@ const List = (props) => {
       <div>
         Click on an item to remove it
         <ul className="list" >
-          {props.items.map((item) => (
-            <ListItem item={item} removeToDo={props.removeToDo} />
+          {props.items.map((item,index) => (
+            <ListItem item={item} key={item+index}removeToDo={props.removeToDo} />
           ))}
         </ul>
       </div>
