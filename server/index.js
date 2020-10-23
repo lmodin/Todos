@@ -2,7 +2,7 @@ const express = require('express');
 const Cors = require('cors');
 const bodyParser = require('body-parser');
 
-const toDos = require('./toDos.js');
+var toDos = require('./toDos.js');
 
 const app = express();
 app.use(Cors());
@@ -11,15 +11,20 @@ app.use(bodyParser.json());
 
 
 app.get('/toDos', function (req, res) {
+  //console.log(toDos.toDos);
   res.send(toDos.toDos)
 })
 app.post('/toDos', (req, res) => {
-  toDos.addToDo(req.body)
-  res.send(toDos.toDos)
+  //console.log(toDos.toDos);
+  //console.log('trying to add: ', req.body.todo)
+  let list = toDos.addToDo(req.body.todo)
+  //console.log('updated list in POST: ',list)
+  res.send(list)
 })
 app.delete('/toDos', (req, res) => {
-  toDos.deleteToDo(req.body)
-  res.send(toDos.toDos)
+  //console.log('got a delete request: ',req.body.todo);
+  let list = toDos.deleteToDo(req.body.todo)
+  res.send(list);
 })
 
 app.listen(8000, function() {
