@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  Click on an item to remove it
+  <ul
+    className="list"
+  >
+    <li
+      onClick={[Function]}
+    >
+      Do the laundry
+    </li>
+    <li
+      onClick={[Function]}
+    >
+      Make lunch
+    </li>
+    <li
+      onClick={[Function]}
+    >
+      Water the garden
+    </li>
+  </ul>
+</div>
+`;
