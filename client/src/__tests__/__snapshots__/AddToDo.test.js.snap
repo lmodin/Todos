@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<form
+  className="addToDo"
+  onSubmit={[Function]}
+>
+  <input
+    default="Type a new To Do here"
+    name="todo"
+    onChange={[Function]}
+    type="text"
+  />
+  <input
+    type="submit"
+  />
+</form>
+`;
